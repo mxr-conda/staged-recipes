@@ -1,0 +1,10 @@
+diff --git a/site.cfg b/site.cfg
+index c0cb965..31b3105 100644
+--- a/site.cfg
++++ b/site.cfg
+@@ -5,4 +5,4 @@ link_static=default
+ # Windows: location of MySQL Connector/C installation
+ install_dir=c:\Program Files\MariaDB\MariaDB Connector C 64-bit
+ # Posix: location of mariadb_config executable
+-mariadb_config=/usr/local/bin/mariadb_config
++mariadb_config=/usr/bin/mariadb_config
