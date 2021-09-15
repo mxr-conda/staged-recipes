@@ -15,23 +15,26 @@ build:
   number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  skip: True  # [win]
+  missing_dso_whitelist:
+    - '*'
 
 requirements:
   build:
     - {{ compiler('c') }}        # [not win]
-    - {{ compiler('cxx') }}      # [not win]
-    - cmake
     - mysql-connector-c
-    - mysql-connector-cpp
+    - msql-server
   host:
     - pip
     - python >=3.6
-    - mysql-connector-c
-    - mysql-connector-cpp
+    - mariadb-connector-c
+    - msql-server
+    - openssl
   run:
     - python >=3.6
-    - mysql-connector-c
-    - mysql-connector-cpp
+    - mariadb-connector-c
+    - msql-server
+    - openssl
 
 test:
   imports:
