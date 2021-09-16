@@ -23,14 +23,20 @@ requirements:
   build:
     - {{ compiler('c') }}        # [not win]
     - mysql-connector-c
+    - mysql-connector-cpp
+    - mysql-connector-python
   host:
     - pip
     - python >=3.6
     - mariadb-connector-c
+    - mysql-connector-cpp
+    - mysql-connector-python
     - openssl
   run:
     - python >=3.6
     - mariadb-connector-c
+    - mysql-connector-cpp
+    - mysql-connector-python
     - openssl
 
 test:
