@@ -11,17 +11,22 @@ source:
 
 build:
   number: 0
+  missing_dso_whitelist:
+    - '*'
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - cmake
+    - ninja # [win]
     - make # [not win]
+  host:
+    - openssl # [not win]
 
 test:
-  requires:
-    - make  # [not win]
-    - {{ compiler('c') }}
+  - mysql_config --version  # [not win]
+
 
 about:
   home: https://github.com/simplejson/simplejson
