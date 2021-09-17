@@ -8,8 +8,6 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mariadb-{{ version }}.tar.gz
   sha256: 3c7eebcb94588b879069a00ae3894ef404f24ed350c40d633ccb98964bc1de55
-  patches:
-    - 0001_fix_imports.patch
 
 build:
   number: 0
@@ -25,19 +23,22 @@ requirements:
     - mysql-connector-c
     - mysql-connector-cpp
     - mysql-connector-python
+    - cmake
+    - ninja       # [win]
+    - make        # [unix]
   host:
     - pip
     - python >=3.6
     - mariadb-connector-c
     - mysql-connector-cpp
     - mysql-connector-python
-    - openssl
+    - openssl # [not win]
   run:
     - python >=3.6
     - mariadb-connector-c
     - mysql-connector-cpp
     - mysql-connector-python
-    - openssl
+    - openssl # [not win]
 
 test:
   imports:
