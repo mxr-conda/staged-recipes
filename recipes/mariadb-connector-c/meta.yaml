@@ -22,10 +22,6 @@ requirements:
   host:
     - openssl # [not win]
 
-test:
-  - mysql_config --version  # [not win]
-
-
 about:
   home: https://github.com/simplejson/simplejson
   license: LGPL-2.1
