@@ -22,6 +22,7 @@ requirements:
   host:
     - pip
     - python >=3.6
+    - mariadb-connector-c
   run:
     - python >=3.6
     - mariadb-connector-c
@@ -35,7 +36,6 @@ test:
     - pip check
   requires:
     - pip
-    - {{ compiler('c') }}
 
 about:
   home: https://www.github.com/mariadb-corporation/mariadb-connector-python
