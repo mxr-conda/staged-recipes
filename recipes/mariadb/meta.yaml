@@ -19,10 +19,6 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}        # [not win]
-    - mariadb-connector-c
-    - cmake
-    - ninja       # [win]
-    - make        # [unix]
   host:
     - pip
     - python >=3.6
