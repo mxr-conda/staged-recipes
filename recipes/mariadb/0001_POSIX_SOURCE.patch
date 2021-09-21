@@ -1,12 +1,18 @@
 diff --git a/include/mariadb_python.h b/include/mariadb_python.h
-index bd46c23..5b93d11 100644
+index bd46c23..42df21d 100644
 --- a/include/mariadb_python.h
 +++ b/include/mariadb_python.h
-@@ -17,6 +17,7 @@
-    51 Franklin St., Fifth Floor, Boston, MA 02110, USA
- ******************************************************************************/
- #define PY_SSIZE_T_CLEAN
-+#define _POSIX_C_SOURCE 199309L
+@@ -27,10 +27,12 @@
+ #include <mysql.h>
+ #include <errmsg.h>
+ #include <mysqld_error.h>
+-#include <time.h>
+ #include <docs/common.h>
+ #include <limits.h>
  
- #include "Python.h"
- #include "bytesobject.h"
++#define _POSIX_C_SOURCE=199309L
++#include <time.h>
++
+ #if defined(_WIN32)
+ #include <windows.h>
+ typedef CRITICAL_SECTION pthread_mutex_t;
