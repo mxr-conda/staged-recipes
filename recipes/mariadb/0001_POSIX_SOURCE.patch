@@ -1,18 +1,12 @@
-diff --git a/include/mariadb_python.h b/include/mariadb_python.h
-index bd46c23..e433ea9 100644
---- a/include/mariadb_python.h
-+++ b/include/mariadb_python.h
-@@ -27,10 +27,12 @@
- #include <mysql.h>
- #include <errmsg.h>
- #include <mysqld_error.h>
--#include <time.h>
- #include <docs/common.h>
- #include <limits.h>
- 
+diff --git a/mariadb/mariadb_connection.c b/mariadb/mariadb_connection.c
+index 07321b2..3311c63 100644
+--- a/mariadb/mariadb_connection.c
++++ b/mariadb/mariadb_connection.c
+@@ -16,6 +16,7 @@
+   or write to the Free Software Foundation, Inc.,
+   51 Franklin St., Fifth Floor, Boston, MA 02110, USA
+  *****************************************************************************/
 +#define _POSIX_C_SOURCE 199309L
-+#include <time.h>
-+
- #if defined(_WIN32)
- #include <windows.h>
- typedef CRITICAL_SECTION pthread_mutex_t;
+ 
+ #include "mariadb_python.h"
+ #include "docs/connection.h"
