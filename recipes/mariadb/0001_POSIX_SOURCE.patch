@@ -1,5 +1,5 @@
 diff --git a/include/mariadb_python.h b/include/mariadb_python.h
-index bd46c23..42df21d 100644
+index bd46c23..e433ea9 100644
 --- a/include/mariadb_python.h
 +++ b/include/mariadb_python.h
 @@ -27,10 +27,12 @@
@@ -10,7 +10,7 @@ index bd46c23..42df21d 100644
  #include <docs/common.h>
  #include <limits.h>
  
-+#define _POSIX_C_SOURCE=199309L
++#define _POSIX_C_SOURCE 199309L
 +#include <time.h>
 +
  #if defined(_WIN32)
