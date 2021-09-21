@@ -8,6 +8,8 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mariadb-{{ version }}.tar.gz
   sha256: 3c7eebcb94588b879069a00ae3894ef404f24ed350c40d633ccb98964bc1de55
+  patches: 
+    - 0001_POSIX_SOURCE.patch
 
 build:
   number: 0
