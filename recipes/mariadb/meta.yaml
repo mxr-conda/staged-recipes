@@ -18,11 +18,10 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('c') }} 
   host:
     - pip
     - python >=3.6
-    - mariadb-connector-c
   run:
     - python >=3.6
     - mariadb-connector-c
