@@ -27,15 +27,14 @@ requirements:
     - pip
     - python >=3.6
     - mariadb-connector-c
-    - openssl # [not win]
   run:
     - python >=3.6
     - mariadb-connector-c
-    - openssl # [not win]
 
 test:
   imports:
     - mariadb
+    - mariadb.__init__
     - mariadb.constants
   commands:
     - pip check
