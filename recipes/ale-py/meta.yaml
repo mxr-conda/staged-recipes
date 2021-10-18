@@ -16,11 +16,13 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - cmake
+    - ninja
   host:
     - python
     - pip
-  run:
     - numpy
+  run:
     - python
 
 test:
