@@ -1,0 +1,49 @@
+{% set name = "geoscan" %}
+{% set version = "0.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/databrickslabs/{{ name }}/archive/{{ name }}-{{ version }}.tar.gz
+  sha256: b213874cad3c3264a15d163b80d48cb18eacc819f8ca1189ae6106f52a5e53b2
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  build:
+  host:
+    - python
+    - pip
+  run:
+    - python
+    - py4j ==0.10.9.2
+    - pyspark ==3.1.2
+    - coverage ==5.5
+
+test:
+  imports:
+    - geoscan
+    - geoscan.python.tests
+
+about:
+  home: https://github.com/databrickslabs/geoscan
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: 'GEOSCAN, our novel approach to DBSCAN algorithm for geospatial clustering'
+  description: |
+    GEOSCAN, our novel approach to DBSCAN algorithm for geospatial clustering, 
+    leveraging uber H3 library to only group points we know are in close vicinity
+    (according to H3 precision) and relying on GraphX to detect dense areas at 
+    massive scale. With such a framework, Financial services institutions 
+    can better understand user shopping behaviours and detect anomalous transactions
+    in real time.
+
+extra:
+  recipe-maintainers:
+    - mxr-conda
+    - d-cunningham
